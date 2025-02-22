@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/quantum_bluegrey100"
+    tools:context=".Fragment.PreOrderFragment">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pre_card2"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/pre_filters_card"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/pre_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Search product"
+            android:drawablePadding="10dp"
+            android:background="@null"
+            android:drawableStart="@drawable/ic_search"
+            android:drawableTint="@color/grey"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/pre_filters_card"
+        android:layout_width="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/ic_filter"
+            android:id="@+id/filters_btn"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pre_product_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/pre_card2"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:overScrollMode="never"
+        android:visibility="visible"
+        tools:listitem="@layout/single_product_layout" />
+    <TextView
+        android:id="@+id/pre_no_product"
+        android:gravity="center"
+        android:text="No Product found"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ProgressBar
+        android:id="@+id/pre_spin_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
